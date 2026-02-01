@@ -5,9 +5,11 @@ A native iOS time tracking application for personal use.
 ## Features
 
 - **Timer**: Start/stop timer for any project
-- **Entries**: View time entries grouped by day, with filters (Day/Month/Year)
+- **Entries**: View time entries grouped by day, with filters (Day/Month/Year) and project filter
+- **Export**: Export entries to PDF with share functionality
 - **Projects**: Manage projects with optional monthly target hours
 - **Reports**: Weekly summary with project breakdown
+- **Multilingual**: Available in Romanian, English, and German
 
 ## Tech Stack
 
