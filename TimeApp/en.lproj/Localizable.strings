@@ -30,6 +30,8 @@
 "entries.date.label" = "Date";
 "entries.month.label" = "Month";
 "entries.year.label" = "Year";
+"entries.project.label" = "Project";
+"entries.project.all" = "All projects";
 
 "entries.total.today" = "Total today";
 "entries.total.month_format" = "Total %@";
@@ -48,6 +50,11 @@
 "entries.edit.note" = "Note";
 "entries.edit.cancel" = "Cancel";
 "entries.edit.save" = "Save";
+
+// MARK: - Export
+"export.title" = "Export";
+"export.period" = "Period";
+"export.total_day" = "Day total";
 
 // MARK: - Projects View
 "projects.title" = "Projects";

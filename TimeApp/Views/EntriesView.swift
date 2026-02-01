@@ -10,6 +10,7 @@ struct EntriesView: View {
     @Environment(\.modelContext) private var modelContext
     @StateObject private var viewModel = EntriesViewModel()
     @State private var editingEntry: TimeEntry?
+    @State private var exportURL: URL?
 
     var body: some View {
         NavigationStack {
@@ -24,6 +25,16 @@ struct EntriesView: View {
                 entriesList
             }
             .navigationTitle(L10n.entriesTitle)
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button {
+                        exportToPDF()
+                    } label: {
+                        Image(systemName: "square.and.arrow.up")
+                    }
+                    .disabled(viewModel.groupedEntries.isEmpty)
+                }
+            }
             .onAppear {
                 viewModel.configure(with: modelContext)
             }
@@ -32,11 +43,38 @@ struct EntriesView: View {
                     viewModel.fetchEntries()
                 }
             }
+            .sheet(isPresented: Binding(
+                get: { exportURL != nil },
+                set: { if !$0 { exportURL = nil } }
+            )) {
+                if let url = exportURL {
+                    ShareSheet(items: [url])
+                }
+            }
+        }
+    }
+
+    private func exportToPDF() {
+        let exportData = ExportData(
+            periodLabel: viewModel.totalPeriodLabel,
+            projectLabel: viewModel.selectedProject?.name ?? L10n.entriesProjectAll,
+            totalPeriod: "\(viewModel.totalPeriodLabel): \(viewModel.formattedTotalPeriod)",
+            groupedEntries: viewModel.groupedEntries
+        )
+
+        do {
+            let pdfURL = try ExportService.shared.generatePDF(from: exportData)
+            exportURL = pdfURL
+        } catch {
+            print("Error generating PDF: \(error)")
         }
     }
 
     private var periodFilterAndDatePicker: some View {
         VStack(spacing: 8) {
+            // Project Picker
+            projectPicker
+
             // Period Segmented Control
             Picker(L10n.entriesPeriodLabel, selection: $viewModel.selectedPeriod) {
                 ForEach(PeriodFilter.allCases, id: \.self) { filter in
@@ -53,6 +91,20 @@ struct EntriesView: View {
             datePicker
         }
         .padding(.vertical)
+    }
+
+    private var projectPicker: some View {
+        Picker(L10n.entriesProjectLabel, selection: $viewModel.selectedProject) {
+            Text(L10n.entriesProjectAll).tag(nil as Project?)
+            ForEach(viewModel.availableProjects) { project in
+                Text(project.name).tag(project as Project?)
+            }
+        }
+        .pickerStyle(.menu)
+        .padding(.horizontal)
+        .onChange(of: viewModel.selectedProject) { _, _ in
+            viewModel.fetchEntries()
+        }
     }
 
     @ViewBuilder
@@ -276,4 +328,15 @@ struct EditEntryView: View {
 #Preview {
     EntriesView()
         .modelContainer(for: [Project.self, TimeEntry.self], inMemory: true)
+}
+
+// MARK: - Share Sheet
+struct ShareSheet: UIViewControllerRepresentable {
+    let items: [Any]
+
+    func makeUIViewController(context: Context) -> UIActivityViewController {
+        UIActivityViewController(activityItems: items, applicationActivities: nil)
+    }
+
+    func updateUIViewController(_ uiViewController: UIActivityViewController, context: Context) {}
 }

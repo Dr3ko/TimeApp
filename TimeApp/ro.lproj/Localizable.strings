@@ -30,6 +30,8 @@
 "entries.date.label" = "Data";
 "entries.month.label" = "Lună";
 "entries.year.label" = "An";
+"entries.project.label" = "Proiect";
+"entries.project.all" = "Toate proiectele";
 
 "entries.total.today" = "Total azi";
 "entries.total.month_format" = "Total %@";
@@ -48,6 +50,11 @@
 "entries.edit.note" = "Notă";
 "entries.edit.cancel" = "Anulează";
 "entries.edit.save" = "Salvează";
+
+// MARK: - Export
+"export.title" = "Export";
+"export.period" = "Perioada";
+"export.total_day" = "Total zi";
 
 // MARK: - Projects View
 "projects.title" = "Proiecte";

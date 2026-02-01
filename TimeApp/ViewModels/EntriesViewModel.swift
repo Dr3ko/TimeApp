@@ -52,12 +52,31 @@ final class EntriesViewModel: ObservableObject {
     @Published var selectedPeriod: PeriodFilter = .month
     @Published var selectedMonth: Date = Date()
     @Published var selectedYear: Date = Date()
+    @Published var availableProjects: [Project] = []
+    @Published var selectedProject: Project?
 
     private var modelContext: ModelContext?
 
     func configure(with modelContext: ModelContext) {
         self.modelContext = modelContext
+        fetchProjects()
         fetchEntries()
+    }
+
+    func fetchProjects() {
+        guard let modelContext = modelContext else { return }
+
+        let descriptor = FetchDescriptor<Project>(
+            predicate: #Predicate<Project> { !$0.isArchived },
+            sortBy: [SortDescriptor(\.createdAt, order: .reverse)]
+        )
+
+        do {
+            availableProjects = try modelContext.fetch(descriptor)
+        } catch {
+            print("Error fetching projects: \(error)")
+            availableProjects = []
+        }
     }
 
     func fetchEntries() {
@@ -80,20 +99,41 @@ final class EntriesViewModel: ObservableObject {
             endDate = yearInterval.end
         }
 
-        let descriptor = FetchDescriptor<TimeEntry>(
-            predicate: #Predicate<TimeEntry> {
-                $0.startedAt >= startDate && $0.startedAt < endDate
-            },
-            sortBy: [SortDescriptor(\.startedAt, order: .reverse)]
-        )
+        let entries: [TimeEntry]
 
-        do {
-            let entries = try modelContext.fetch(descriptor)
-            groupEntriesByDay(entries)
-            calculateTotalPeriod()
-        } catch {
-            print("Error fetching entries: \(error)")
+        if let project = selectedProject {
+            // Filtrare pe proiect selectat
+            let projectID = project.id
+            let descriptor = FetchDescriptor<TimeEntry>(
+                predicate: #Predicate<TimeEntry> {
+                    $0.startedAt >= startDate && $0.startedAt < endDate && $0.project?.id == projectID
+                },
+                sortBy: [SortDescriptor(\.startedAt, order: .reverse)]
+            )
+            do {
+                entries = try modelContext.fetch(descriptor)
+            } catch {
+                print("Error fetching entries: \(error)")
+                entries = []
+            }
+        } else {
+            // Toate proiectele
+            let descriptor = FetchDescriptor<TimeEntry>(
+                predicate: #Predicate<TimeEntry> {
+                    $0.startedAt >= startDate && $0.startedAt < endDate
+                },
+                sortBy: [SortDescriptor(\.startedAt, order: .reverse)]
+            )
+            do {
+                entries = try modelContext.fetch(descriptor)
+            } catch {
+                print("Error fetching entries: \(error)")
+                entries = []
+            }
         }
+
+        groupEntriesByDay(entries)
+        calculateTotalPeriod()
     }
 
     private func groupEntriesByDay(_ entries: [TimeEntry]) {

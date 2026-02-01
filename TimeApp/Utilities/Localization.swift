@@ -51,6 +51,8 @@ extension L10n {
     static var entriesDateLabel: String { string("entries.date.label") }
     static var entriesMonthLabel: String { string("entries.month.label") }
     static var entriesYearLabel: String { string("entries.year.label") }
+    static var entriesProjectLabel: String { string("entries.project.label") }
+    static var entriesProjectAll: String { string("entries.project.all") }
     static var entriesTotalToday: String { string("entries.total.today") }
     static func entriesTotalMonth(_ month: String) -> String { string("entries.total.month_format", month) }
     static func entriesTotalYear(_ year: String) -> String { string("entries.total.year_format", year) }
@@ -67,6 +69,13 @@ extension L10n {
     static var entriesEditNote: String { string("entries.edit.note") }
     static var entriesEditCancel: String { string("entries.edit.cancel") }
     static var entriesEditSave: String { string("entries.edit.save") }
+}
+
+// MARK: - Export
+extension L10n {
+    static var exportTitle: String { string("export.title") }
+    static var exportPeriod: String { string("export.period") }
+    static var exportTotalDay: String { string("export.total_day") }
 }
 
 // MARK: - Projects
