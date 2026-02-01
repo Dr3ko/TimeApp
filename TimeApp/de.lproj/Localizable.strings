@@ -1,0 +1,92 @@
+/*
+  Localizable.strings (Deutsch)
+  TimeApp
+*/
+
+// MARK: - Tab Bar
+"timer.tab" = "Timer";
+"entries.tab" = "Einträge";
+"projects.tab" = "Projekte";
+"reports.tab" = "Berichte";
+
+// MARK: - Timer View
+"timer.title" = "Timer";
+"timer.project.label" = "Projekt";
+"timer.project.placeholder" = "Projekt auswählen";
+"timer.no_projects.title" = "Keine Projekte";
+"timer.no_projects.message" = "Fügen Sie zuerst ein Projekt im Projekte-Tab hinzu";
+"timer.note.label" = "Notiz (optional)";
+"timer.note.placeholder" = "Woran arbeiten Sie?";
+"timer.start" = "Start";
+"timer.stop" = "Stopp";
+"timer.unknown" = "Unbekannt";
+
+// MARK: - Entries View
+"entries.title" = "Einträge";
+"entries.period.label" = "Zeitraum";
+"entries.period.day" = "Tag";
+"entries.period.month" = "Monat";
+"entries.period.year" = "Jahr";
+"entries.date.label" = "Datum";
+"entries.month.label" = "Monat";
+"entries.year.label" = "Jahr";
+
+"entries.total.today" = "Gesamt heute";
+"entries.total.month_format" = "Gesamt %@";
+"entries.total.year_format" = "Gesamt %@";
+
+"entries.empty.title" = "Keine Einträge";
+"entries.empty.message" = "Keine Zeiteinträge für diesen Zeitraum";
+"entries.today" = "(heute)";
+"entries.running" = "läuft";
+
+"entries.edit.title" = "Eintrag bearbeiten";
+"entries.edit.project" = "Projekt";
+"entries.edit.time" = "Zeit";
+"entries.edit.start" = "Start";
+"entries.edit.end" = "Ende";
+"entries.edit.note" = "Notiz";
+"entries.edit.cancel" = "Abbrechen";
+"entries.edit.save" = "Speichern";
+
+// MARK: - Projects View
+"projects.title" = "Projekte";
+"projects.empty.title" = "Keine Projekte";
+"projects.empty.message" = "Tippen Sie auf +, um Ihr erstes Projekt zu erstellen";
+"projects.edit" = "Bearbeiten";
+"projects.delete" = "Löschen";
+"projects.entries.count" = "%d Einträge";
+
+// Add Project Sheet
+"projects.add.title" = "Neues Projekt";
+"projects.add.name_section" = "Projektname";
+"projects.add.name_placeholder" = "Name";
+"projects.add.target_section" = "Monatliches Ziel (Stunden)";
+"projects.add.target_placeholder" = "z. B.: 3, 5, 18.5";
+"projects.add.target_hours_suffix" = "h";
+"projects.add.target_hint" = "Leer lassen für kein Ziel";
+"projects.add.cancel" = "Abbrechen";
+"projects.add.save" = "Speichern";
+
+// Edit Project Sheet
+"projects.edit.title" = "Projekt bearbeiten";
+"projects.edit.target_current" = "Aktuelles Ziel: %.1fh";
+
+// Project Row Stats
+"projects.stats.this_month" = "Dieser Monat:";
+"projects.stats.carry" = "Saldo (Übertrag):";
+"projects.stats.complete" = "Diesen Monat erledigt ✓";
+"projects.stats.remaining" = "Verbleibend dieser Monat:";
+
+// MARK: - Reports View
+"reports.title" = "Berichte";
+"reports.week" = "Diese Woche";
+"reports.by_project" = "Nach Projekt";
+
+// MARK: - Time Format (used in ViewModels)
+"time.format.hours_minutes" = "%dh %02dm";
+"time.format.hours_only" = "%.1fh";
+
+// MARK: - Date Format (month year)
+"date.format.month_year" = "MMMM yyyy";
+"date.format.year_only" = "yyyy";

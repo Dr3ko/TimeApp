@@ -1,0 +1,92 @@
+/*
+  Localizable.strings (Română - Default)
+  TimeApp
+*/
+
+// MARK: - Tab Bar
+"timer.tab" = "Timer";
+"entries.tab" = "Istoric";
+"projects.tab" = "Proiecte";
+"reports.tab" = "Rapoarte";
+
+// MARK: - Timer View
+"timer.title" = "Timer";
+"timer.project.label" = "Proiect";
+"timer.project.placeholder" = "Selectează proiect";
+"timer.no_projects.title" = "Niciun proiect";
+"timer.no_projects.message" = "Adaugă un proiect din tab-ul Proiecte";
+"timer.note.label" = "Notă (opțional)";
+"timer.note.placeholder" = "La ce lucrezi?";
+"timer.start" = "Start";
+"timer.stop" = "Stop";
+"timer.unknown" = "Necunoscut";
+
+// MARK: - Entries View
+"entries.title" = "Istoric";
+"entries.period.label" = "Perioadă";
+"entries.period.day" = "Zi";
+"entries.period.month" = "Lună";
+"entries.period.year" = "An";
+"entries.date.label" = "Data";
+"entries.month.label" = "Lună";
+"entries.year.label" = "An";
+
+"entries.total.today" = "Total azi";
+"entries.total.month_format" = "Total %@";
+"entries.total.year_format" = "Total %@";
+
+"entries.empty.title" = "Niciun pontaj";
+"entries.empty.message" = "Nu există pontaje pentru această perioadă";
+"entries.today" = "(azi)";
+"entries.running" = "în curs";
+
+"entries.edit.title" = "Editează Pontaj";
+"entries.edit.project" = "Proiect";
+"entries.edit.time" = "Timp";
+"entries.edit.start" = "Start";
+"entries.edit.end" = "Sfârșit";
+"entries.edit.note" = "Notă";
+"entries.edit.cancel" = "Anulează";
+"entries.edit.save" = "Salvează";
+
+// MARK: - Projects View
+"projects.title" = "Proiecte";
+"projects.empty.title" = "Niciun Proiect";
+"projects.empty.message" = "Apasă + pentru a crea primul proiect";
+"projects.edit" = "Editează";
+"projects.delete" = "Șterge";
+"projects.entries.count" = "%d pontaje";
+
+// Add Project Sheet
+"projects.add.title" = "Proiect Nou";
+"projects.add.name_section" = "Nume Proiect";
+"projects.add.name_placeholder" = "Nume";
+"projects.add.target_section" = "Ore pe lună (țintă)";
+"projects.add.target_placeholder" = "ex: 3, 5, 18.5";
+"projects.add.target_hours_suffix" = "h";
+"projects.add.target_hint" = "Lasă gol pentru fără țintă";
+"projects.add.cancel" = "Anulează";
+"projects.add.save" = "Salvează";
+
+// Edit Project Sheet
+"projects.edit.title" = "Editează Proiect";
+"projects.edit.target_current" = "Țintă curentă: %.1fh";
+
+// Project Row Stats
+"projects.stats.this_month" = "Luna asta:";
+"projects.stats.carry" = "Sold (carry):";
+"projects.stats.complete" = "Gata pe luna asta ✓";
+"projects.stats.remaining" = "Rămas luna asta:";
+
+// MARK: - Reports View
+"reports.title" = "Rapoarte";
+"reports.week" = "Săptămâna aceasta";
+"reports.by_project" = "După Proiect";
+
+// MARK: - Time Format (used in ViewModels)
+"time.format.hours_minutes" = "%dh %02dm";
+"time.format.hours_only" = "%.1fh";
+
+// MARK: - Date Format (month year)
+"date.format.month_year" = "MMMM yyyy";
+"date.format.year_only" = "yyyy";

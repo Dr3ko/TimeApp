@@ -1,0 +1,92 @@
+/*
+  Localizable.strings (English)
+  TimeApp
+*/
+
+// MARK: - Tab Bar
+"timer.tab" = "Timer";
+"entries.tab" = "Entries";
+"projects.tab" = "Projects";
+"reports.tab" = "Reports";
+
+// MARK: - Timer View
+"timer.title" = "Timer";
+"timer.project.label" = "Project";
+"timer.project.placeholder" = "Select Project";
+"timer.no_projects.title" = "No Projects";
+"timer.no_projects.message" = "Add a project in the Projects tab first";
+"timer.note.label" = "Note (optional)";
+"timer.note.placeholder" = "What are you working on?";
+"timer.start" = "Start";
+"timer.stop" = "Stop";
+"timer.unknown" = "Unknown";
+
+// MARK: - Entries View
+"entries.title" = "Entries";
+"entries.period.label" = "Period";
+"entries.period.day" = "Day";
+"entries.period.month" = "Month";
+"entries.period.year" = "Year";
+"entries.date.label" = "Date";
+"entries.month.label" = "Month";
+"entries.year.label" = "Year";
+
+"entries.total.today" = "Total today";
+"entries.total.month_format" = "Total %@";
+"entries.total.year_format" = "Total %@";
+
+"entries.empty.title" = "No entries";
+"entries.empty.message" = "No time entries for this period";
+"entries.today" = "(today)";
+"entries.running" = "running";
+
+"entries.edit.title" = "Edit Entry";
+"entries.edit.project" = "Project";
+"entries.edit.time" = "Time";
+"entries.edit.start" = "Start";
+"entries.edit.end" = "End";
+"entries.edit.note" = "Note";
+"entries.edit.cancel" = "Cancel";
+"entries.edit.save" = "Save";
+
+// MARK: - Projects View
+"projects.title" = "Projects";
+"projects.empty.title" = "No Projects";
+"projects.empty.message" = "Tap + to create your first project";
+"projects.edit" = "Edit";
+"projects.delete" = "Delete";
+"projects.entries.count" = "%d entries";
+
+// Add Project Sheet
+"projects.add.title" = "New Project";
+"projects.add.name_section" = "Project Name";
+"projects.add.name_placeholder" = "Name";
+"projects.add.target_section" = "Monthly Target (hours)";
+"projects.add.target_placeholder" = "ex: 3, 5, 18.5";
+"projects.add.target_hours_suffix" = "h";
+"projects.add.target_hint" = "Leave empty for no target";
+"projects.add.cancel" = "Cancel";
+"projects.add.save" = "Save";
+
+// Edit Project Sheet
+"projects.edit.title" = "Edit Project";
+"projects.edit.target_current" = "Current target: %.1fh";
+
+// Project Row Stats
+"projects.stats.this_month" = "This month:";
+"projects.stats.carry" = "Balance (carry):";
+"projects.stats.complete" = "Done this month ✓";
+"projects.stats.remaining" = "Remaining this month:";
+
+// MARK: - Reports View
+"reports.title" = "Reports";
+"reports.week" = "This Week";
+"reports.by_project" = "By Project";
+
+// MARK: - Time Format (used in ViewModels)
+"time.format.hours_minutes" = "%dh %02dm";
+"time.format.hours_only" = "%.1fh";
+
+// MARK: - Date Format (month year)
+"date.format.month_year" = "MMMM yyyy";
+"date.format.year_only" = "yyyy";
