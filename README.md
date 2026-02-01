@@ -33,9 +33,19 @@ A native iOS time tracking application for personal use.
 1. Go to the **Projects** tab and create a project
 2. Go to the **Timer** tab, select your project, and tap **Start**
 
+## Roadmap
+
+See [ROADMAP.md](ROADMAP.md) for planned features and project direction.
+
 ## Contributing
 
-Please open an issue before submitting a pull request.
+Contributions are welcome! Please follow these guidelines:
+
+1. **Open an issue first** before submitting a pull request
+2. **Discuss major changes** in an issue before implementing them
+3. **Keep it focused**: TimeApp aims to be simple and privacy-focused
+
+For bug reports or feature requests, please use the [issue templates](.github/ISSUE_TEMPLATE/).
 
 ## License
 
